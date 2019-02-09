@@ -1,0 +1,16 @@
+version: '3'
+services:
+  go_sample:
+    build: .
+    container_name: go_sample
+    privileged: true
+    tty: true
+    stdin_open: true
+    command: go run /go/src/go_sample/main.go
+    volumes:
+      - .:/go/src/go_sample
+      - vendor:/go/src/go_sample/vendor
+    ports:
+      - "8080:8080"
+volumes:
+  vendor:
