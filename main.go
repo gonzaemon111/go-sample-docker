@@ -11,6 +11,12 @@ func main() {
             "message": "Hello World!!!!!",
         })
     })
+
+    r.GET("/get", func(c *gin.Context) {
+      c.JSON(200, gin.H{
+          "message": "Hello World Go!!!",
+      })
+    })
     // ポートを設定しています。
     r.Run(":8080")
 }
