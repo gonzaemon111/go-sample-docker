@@ -6,7 +6,6 @@ services:
     privileged: true
     tty: true
     stdin_open: true
-    command: go run /go/src/go_sample/main.go
     volumes:
       - .:/go/src/go_sample
       - vendor:/go/src/go_sample/vendor
