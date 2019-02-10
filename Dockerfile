@@ -9,13 +9,15 @@ WORKDIR /go/src/go_sample/
 # 必要なパッケージをイメージにインストールする
 RUN apk update \
   && apk add --no-cache \
+  curl \
   git \
   bash \
   vim \
   gcc \
-  && go get -u github.com/codegangsta/gin \
+  && go get -u github.com/gin-gonic/gin \
   && go get -u github.com/pilu/fresh \
   && go get -u github.com/golang/dep/cmd/dep \
+  && go get -u github.com/garyburd/redigo/redis \
   && dep ensure
 
 # コンテナ実行時のデフォルトを設定する
