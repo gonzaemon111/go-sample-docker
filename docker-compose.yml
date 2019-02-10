@@ -12,9 +12,9 @@ services:
       MYSQL_SOCKET: "/var/lib/mysql/mysql.sock"
       MYSQL_HOST: go_sample_db
     volumes:
-      - ./mysql/volumes:/var/lib/mysql
+      - ./mysql/data:/var/lib/mysql
   go_sample:
-    build: .
+    build: ./sample/
     container_name: go_sample
     privileged: true
     tty: true
@@ -22,11 +22,16 @@ services:
     restart: always
     depends_on:
       - go_sample_mysql
+      - go_sample_redis
     volumes:
-      - .:/go/src/go_sample
-      - ./../sample_vendor:/go/src/go_sample/vendor
+      - ./sample:/go/src/go_sample
     ports:
       - "8080:8080"
+  go_sample_redis:
+    restart: always
+    image: redis:alpine
+    ports:
+      - "6389:6379"
+    command: redis-server --appendonly yes
 volumes:
   vendor:
-  mysql-data:
