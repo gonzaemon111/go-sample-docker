@@ -3,3 +3,4 @@ vendor/*
 mysql/data
 redis/data
 sample/tmp/*
+sample/vendor
