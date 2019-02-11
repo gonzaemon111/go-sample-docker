@@ -4,3 +4,4 @@ mysql/data
 redis/data
 sample/tmp/*
 sample/vendor
+sample/.env
