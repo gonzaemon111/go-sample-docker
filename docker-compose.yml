@@ -5,11 +5,11 @@ services:
     ports:
       - "3307:3306"
       - "33070:33060"
-    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8_unicode_ci
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
     environment:
       MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_SOCKET: "/var/lib/mysql/mysql.sock"
+      MYSQL_SOCKET: /var/lib/mysql/mysql.sock
       MYSQL_HOST: go_sample_db
     volumes:
       - ./mysql/data:/var/lib/mysql
