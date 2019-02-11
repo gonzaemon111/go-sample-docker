@@ -21,6 +21,10 @@ RUN apk update \
   && go get -u github.com/pilu/fresh \
   && go get -u github.com/golang/dep/cmd/dep \
   && go get -u github.com/garyburd/redigo/redis \
+  && go get -u github.com/motemen/gore \
+  && go get -u github.com/nsf/gocode \
+  && go get -u github.com/k0kubun/pp \
+  && go get -u github.com/joho/godotenv \
   && dep ensure
 
 # コンテナ実行時のデフォルトを設定する
