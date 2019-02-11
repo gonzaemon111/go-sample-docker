@@ -14,6 +14,9 @@ RUN apk update \
   bash \
   vim \
   gcc \
+  mysql \
+  mysql-client \
+  mysql-dev \
   && go get -u github.com/gin-gonic/gin \
   && go get -u github.com/pilu/fresh \
   && go get -u github.com/golang/dep/cmd/dep \
